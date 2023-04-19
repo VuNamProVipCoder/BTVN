@@ -6,9 +6,6 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Buoi3;
-using Buoi2;
-using Buoi1;
 
 namespace Namproject1
 {
