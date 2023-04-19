@@ -1,0 +1,220 @@
+using System;
+using Microsoft.Win32.SafeHandles;
+using System.Buffers;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Buoi3;
+using Buoi2;
+using Buoi1;
+
+namespace Namproject1
+{
+    internal class Program  
+    {
+        static void Main(string[] args)
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+
+            HocVien HV1, HV2, HV3, HV4, HV5, HV6, HV7, HV8, HV9, HV10, HV11, HV12 = new HocVien();
+
+            HV1.vsHoTen = "Lê Hồng Nhung";
+            HV1.vsGioiTinh = "Nữ";
+            HV1.vdtNgaySinh = DateTime.ParseExact("25/08/2004", "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            HV1.vsTruong = "NEU";
+            HV1.vsChoO = "Chung cư Hoàng Huy";
+            HV1.vsQueQuan = "Thanh Hóa";
+
+            HV2.vsHoTen = "Đặng Thành Long";
+            HV2.vsGioiTinh = "Nam";
+            HV2.vdtNgaySinh = DateTime.ParseExact("16/07/1999", "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            HV2.vsTruong = "HB ACADEMY =)))))";
+            HV2.vsChoO = "Hà Nội";
+            HV2.vsQueQuan = "Hà Nam";
+
+            HV3.vsHoTen = "Nguyễn Triều Dương";
+            HV3.vsGioiTinh = "Nam";
+            HV3.vdtNgaySinh = DateTime.ParseExact("09/11/2004", "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            HV3.vsTruong = "Greenwich";
+            HV3.vsChoO = "Vinhomes Ocean Park";
+            HV3.vsQueQuan = "Hà Nội";
+
+            HV4.vsHoTen = "Nguyễn Công Nghĩa";
+            HV4.vsGioiTinh = "Nữ";
+            HV4.vdtNgaySinh = DateTime.ParseExact("03/05/2002", "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            HV4.vsTruong = "HB Academy";
+            HV4.vsChoO = "Hà Nội";
+            HV4.vsQueQuan = "Hà Nội";
+
+            HV5.vsHoTen = "Nguyễn Ngọc Châu";
+            HV5.vsGioiTinh = "Nam";
+            HV5.vdtNgaySinh = DateTime.ParseExact("17/01/2001", "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            HV5.vsTruong = "Đại học Cần Thơ";
+            HV5.vsChoO = "Cần Thơ";
+            HV5.vsQueQuan = "Sóc Trăng";
+
+            HV6.vsHoTen = "Bùi Quốc Bảo";
+            HV6.vsGioiTinh = "Nam";
+            HV6.vdtNgaySinh = DateTime.ParseExact("14/08/2004", "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            HV6.vsTruong = "Đại học Bách KHoa Hà Nội";
+            HV6.vsChoO = "Đống Đa";
+            HV6.vsQueQuan = "Thanh Hóa";
+
+            HV7.vsHoTen = "Nguyễn Quang Huy";
+            HV7.vsGioiTinh = "Nam";
+            HV7.vdtNgaySinh = DateTime.ParseExact("25/09/2002", "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            HV7.vsTruong = "Cao đẳng fpt polytechnic";
+            HV7.vsChoO = "xóm 1 mễ trì, nam từ liêm , hà nội";
+            HV7.vsQueQuan = "Hà Nội";
+
+            HV8.vsHoTen = "Hoàng Trung Khải";
+            HV8.vsGioiTinh = "Nam";
+            HV8.vdtNgaySinh = DateTime.ParseExact("09/10/2004", "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            HV8.vsTruong = "Đại học Bách khoa";
+            HV8.vsChoO = "Hoàng Mai, Hà Nội";
+            HV8.vsQueQuan = "Thanh Hóa";
+
+            HV9.vsHoTen = "Lê Xuân Phúc";
+            HV9.vsGioiTinh = "Nam";
+            HV9.vdtNgaySinh = DateTime.ParseExact("17/02/2004", "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            HV9.vsTruong = "Đại học Bách khoa Hà Nội";
+            HV9.vsChoO = "Hà Nội";
+            HV9.vsQueQuan = "Thanh Hóa";
+
+            HV10.vsHoTen = "Nguyễn Trần Minh";
+            HV10.vsGioiTinh = "Nam";
+            HV10.vdtNgaySinh = DateTime.ParseExact("25/03/2003", "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            HV10.vsTruong = "ĐH Bách Khoa Hà Nội";
+            HV10.vsChoO = "250 Minh Khai";
+            HV10.vsQueQuan = "Thái Bình";
+
+            HV11.vsHoTen = "Lê Đình Hùng Anh";
+            HV11.vsGioiTinh = "Nam";
+            HV11.vdtNgaySinh = DateTime.ParseExact("27/04/2023", "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            HV11.vsTruong = "Lam sơn";
+            HV11.vsChoO = "KTX ĐHBK";
+            HV11.vsQueQuan = "Thanh Hóa";
+
+            HV12.vsHoTen = "Vũ Đức Nam";
+            HV12.vsGioiTinh = "Nam";
+            HV12.vdtNgaySinh = DateTime.ParseExact("10/05/2003", "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            HV12.vsTruong = "Cao Đẳng FPT Polytechnic";
+            HV12.vsChoO = "Hà Nội";
+            HV12.vsQueQuan = "Hải Dương";
+
+            Console.WriteLine("Học viên 1");
+            Console.WriteLine("Tên: " + HV1.vsHoTen);
+            Console.WriteLine("Giới tính: " + HV1.vsGioiTinh);
+            Console.WriteLine("Ngày sinh: " + HV1.vdtNgaySinh.ToString("dd/MM/yy"));
+            Console.WriteLine("Trường: " + HV1.vsTruong);
+            Console.WriteLine("Chỗ ở: " + HV1.vsChoO);
+            Console.WriteLine("Quê quán: " + HV1.vsQueQuan);
+            Console.WriteLine();
+
+            Console.WriteLine("Học viên 2");
+            Console.WriteLine("Tên: " + HV2.vsHoTen);
+            Console.WriteLine("Giới tính: " + HV2.vsGioiTinh);
+            Console.WriteLine("Ngày sinh: " + HV2.vdtNgaySinh.ToString("dd/MM/yy"));
+            Console.WriteLine("Trường: " + HV2.vsTruong);
+            Console.WriteLine("Chỗ ở: " + HV2.vsChoO);
+            Console.WriteLine("Quê quán: " + HV2.vsQueQuan);
+            Console.WriteLine();
+
+            Console.WriteLine("Học viên 3");
+            Console.WriteLine("Tên: " + HV3.vsHoTen);
+            Console.WriteLine("Giới tính: " + HV3.vsGioiTinh);
+            Console.WriteLine("Ngày sinh: " + HV3.vdtNgaySinh.ToString("dd/MM/yy"));
+            Console.WriteLine("Trường: " + HV3.vsTruong);
+            Console.WriteLine("Chỗ ở: " + HV3.vsChoO);
+            Console.WriteLine("Quê quán: " + HV3.vsQueQuan);
+            Console.WriteLine();
+
+            Console.WriteLine("Học viên 4");
+            Console.WriteLine("Tên: " + HV4.vsHoTen);
+            Console.WriteLine("Giới tính: " + HV4.vsGioiTinh);
+            Console.WriteLine("Ngày sinh: " + HV4.vdtNgaySinh.ToString("dd/MM/yy"));
+            Console.WriteLine("Trường: " + HV4.vsTruong);
+            Console.WriteLine("Chỗ ở: " + HV4.vsChoO);
+            Console.WriteLine("Quê quán: " + HV4.vsQueQuan);
+            Console.WriteLine();
+
+            Console.WriteLine("Học viên 5");
+            Console.WriteLine("Tên: " + HV5.vsHoTen);
+            Console.WriteLine("Giới tính: " + HV5.vsGioiTinh);
+            Console.WriteLine("Ngày sinh: " + HV5.vdtNgaySinh.ToString("dd/MM/yy"));
+            Console.WriteLine("Trường: " + HV5.vsTruong);
+            Console.WriteLine("Chỗ ở: " + HV5.vsChoO);
+            Console.WriteLine("Quê quán: " + HV5.vsQueQuan);
+            Console.WriteLine();
+
+            Console.WriteLine("Học viên 6");
+            Console.WriteLine("Tên: " + HV6.vsHoTen);
+            Console.WriteLine("Giới tính: " + HV6.vsGioiTinh);
+            Console.WriteLine("Ngày sinh: " + HV6.vdtNgaySinh.ToString("dd/MM/yy"));
+            Console.WriteLine("Trường: " + HV6.vsTruong);
+            Console.WriteLine("Chỗ ở: " + HV6.vsChoO);
+            Console.WriteLine("Quê quán: " + HV6.vsQueQuan);
+            Console.WriteLine();
+
+            Console.WriteLine("Học viên 7");
+            Console.WriteLine("Tên: " + HV7.vsHoTen);
+            Console.WriteLine("Giới tính: " + HV7.vsGioiTinh);
+            Console.WriteLine("Ngày sinh: " + HV7.vdtNgaySinh.ToString("dd/MM/yy"));
+            Console.WriteLine("Trường: " + HV7.vsTruong);
+            Console.WriteLine("Chỗ ở: " + HV7.vsChoO);
+            Console.WriteLine("Quê quán: " + HV7.vsQueQuan);
+            Console.WriteLine();
+
+            Console.WriteLine("Học viên 8");
+            Console.WriteLine("Tên: " + HV8.vsHoTen);
+            Console.WriteLine("Giới tính: " + HV8.vsGioiTinh);
+            Console.WriteLine("Ngày sinh: " + HV8.vdtNgaySinh.ToString("dd/MM/yy"));
+            Console.WriteLine("Trường: " + HV8.vsTruong);
+            Console.WriteLine("Chỗ ở: " + HV8.vsChoO);
+            Console.WriteLine("Quê quán: " + HV8.vsQueQuan);
+            Console.WriteLine();
+
+            Console.WriteLine("Học viên 9");
+            Console.WriteLine("Tên: " + HV9.vsHoTen);
+            Console.WriteLine("Giới tính: " + HV9.vsGioiTinh);
+            Console.WriteLine("Ngày sinh: " + HV9.vdtNgaySinh.ToString("dd/MM/yy"));
+            Console.WriteLine("Trường: " + HV9.vsTruong);
+            Console.WriteLine("Chỗ ở: " + HV9.vsChoO);
+            Console.WriteLine("Quê quán: " + HV9.vsQueQuan);
+            Console.WriteLine();
+
+            Console.WriteLine("Học viên 10");
+            Console.WriteLine("Tên: " + HV10.vsHoTen);
+            Console.WriteLine("Giới tính: " + HV10.vsGioiTinh);
+            Console.WriteLine("Ngày sinh: " + HV10.vdtNgaySinh.ToString("dd/MM/yy"));
+            Console.WriteLine("Trường: " + HV10.vsTruong);
+            Console.WriteLine("Chỗ ở: " + HV10.vsChoO);
+            Console.WriteLine("Quê quán: " + HV10.vsQueQuan);
+            Console.WriteLine();
+
+            Console.WriteLine("Học viên 11");
+            Console.WriteLine("Tên: " + HV11.vsHoTen);
+            Console.WriteLine("Giới tính: " + HV11.vsGioiTinh);
+            Console.WriteLine("Ngày sinh: " + HV11.vdtNgaySinh.ToString("dd/MM/yy"));
+            Console.WriteLine("Trường: " + HV11.vsTruong);
+            Console.WriteLine("Chỗ ở: " + HV11.vsChoO);
+            Console.WriteLine("Quê quán: " + HV11.vsQueQuan);
+            Console.WriteLine();
+
+            Console.WriteLine("Học viên 12");
+            Console.WriteLine("Tên: " + HV12.vsHoTen);
+            Console.WriteLine("Giới tính: " + HV12.vsGioiTinh);
+            Console.WriteLine("Ngày sinh: " + HV12.vdtNgaySinh.ToString("dd/MM/yy"));
+            Console.WriteLine("Trường: " + HV12.vsTruong);
+            Console.WriteLine("Chỗ ở: " + HV12.vsChoO);
+            Console.WriteLine("Quê quán: " + HV12.vsQueQuan);
+            Console.WriteLine();
+
+            Console.ReadKey();
+        }
+    }
+
+
+}
